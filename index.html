@@ -13,18 +13,20 @@
 <body>
 
   <!-- ==========================================
-       FULL-SCREEN EXPANDING LOADER
-       - Displays centered logo inside circular container
-       - Covers the entire viewport and reveals the main page after animation
-       Comments in JS explain how to disable or change timings
+       FULL-SCREEN LOGO LOADER
+       - Displays centered logo on a full-screen white/light background
+       - Logo zooms in and fades out smoothly over 2-3 seconds
+       - No circular container or background around the logo
+       
+       CUSTOMIZATION:
+       - To change the logo: replace src="L.svg" with your logo file path
+       - To adjust animation speed: modify --loader-duration in css/style.css (default: 2.6s)
+       - To change background color: modify --loader-bg in css/style.css
+       - To disable loader: add data-disable-loader attribute to <body> tag or remove this entire block
        ========================================== -->
-  <!-- If you publish to a host that doesn't support folders, run `scripts\flatten-assets.ps1` to copy the images to the root. -->
   <div id="loader" class="loader" role="status" aria-label="Loading">
-    <div class="loader-circle" aria-hidden="true">
-      <!-- Using SVG directly for the loader ensures it displays correctly and crisply.
-           No PNG fallback here so your SVG is always used. -->
-      <img src="L.svg" id="loader-logo" alt="Speyglo Logo" width="72" height="72">
-    </div>
+    <!-- LOGO IMAGE: Replace src="L.svg" with your own logo file (SVG, PNG, JPG, etc.) -->
+    <img src="L.svg" id="loader-logo" class="loader-logo" alt="Speyglo Logo">
   </div>
 
   <!-- ==========================================
